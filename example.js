@@ -36,3 +36,22 @@ function displayProduct() {
     <h4>$${product.price}</h4>
     <p>${product.description}</p>
   `;
+ updateNavigation();
+}
+
+function updateNavigation() {
+  prevButton.disabled = currentProductIndex === 0;
+  nextButton.disabled = currentProductIndex === products.length - 1;
+}
+
+prevButton.addEventListener('click', () => {
+  currentProductIndex--;
+  displayProduct();
+});
+
+nextButton.addEventListener('click', () => {
+  currentProductIndex++;
+  displayProduct();
+});
+
+fetchProducts();
