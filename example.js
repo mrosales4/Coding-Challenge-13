@@ -9,6 +9,7 @@ const nextButton = document.querySelector('.next-btn');
 let products = [];
 let currentProductIndex = 0;
 
+//Fetch Products
 async function fetchProducts() {
   try {
     loadingElement.classList.add('active'); // Show loading state
@@ -18,7 +19,7 @@ async function fetchProducts() {
   } catch (error) {
     console.error('Error fetching products:', error);
     errorMessage.textContent = 'Error fetching products. Please try again later.';
-    errorMessage.classList.add('active'); // Show error message
+    errorMessage.classList.add('active'); // error messaging Implemantation
   } finally {
     loadingElement.classList.remove('active'); // Hide loading state
   }
